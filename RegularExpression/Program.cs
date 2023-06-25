@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
 Console.WriteLine("welcome to the regular expression program");
-Console.WriteLine("1,checking userfirstname\n2.checking userLatname\n3.checking usereailId");
+Console.WriteLine("1,checking userfirstname\n2.checking userLatname\n3.checking useremailId\n4.checking userPhoneNumber");
 Console.WriteLine("choose what program u want");
 int choose = Convert.ToInt32(Console.ReadLine());
 switch (choose)
@@ -59,6 +59,25 @@ switch (choose)
             else
             {
                 Console.WriteLine("{0} invalid of user emailId", input);
+            }
+
+        }
+        break;
+        case 4:
+        Console.WriteLine("checking Last name of user ");
+        string phoneNumber = @"^91[ ][0-9]{10}$";
+        string[] phone = {"91 9640935321","91 7337545935","916361419518","91 9398039076","916303424324"};
+        foreach (string input in phone)
+        {
+            if (Regex.IsMatch(input, phoneNumber))
+
+
+            {
+                Console.WriteLine("{0} is a valid  of user PhoneNumber", input);
+            }
+            else
+            {
+                Console.WriteLine("{0} invalid of user PhoneNumber", input);
             }
 
         }
