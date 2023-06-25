@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
 Console.WriteLine("welcome to the regular expression program");
-Console.WriteLine("1,checking userfirstname\n2.checking userLatname");
+Console.WriteLine("1,checking userfirstname\n2.checking userLatname\n3.checking usereailId");
 Console.WriteLine("choose what program u want");
 int choose = Convert.ToInt32(Console.ReadLine());
 switch (choose)
@@ -40,6 +40,25 @@ switch (choose)
             else
             {
                 Console.WriteLine("{0} invalid of user Lasttname", input);
+            }
+
+        }
+        break;
+        case 3:
+        Console.WriteLine("checking valid email");
+        string mail = @"^[a-zA-Z0-9]([._%+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z]{2,}){1,2}$";
+        string[] email = { "jayaprakashjp187@gmail.com", "jp.88@gmail.com", "jp@gmail.com", "jp.com" };
+        foreach (string input in email)
+        {
+            if (Regex.IsMatch(input, mail))
+
+
+            {
+                Console.WriteLine("{0} is a valid  of user emailId", input);
+            }
+            else
+            {
+                Console.WriteLine("{0} invalid of user emailId", input);
             }
 
         }
