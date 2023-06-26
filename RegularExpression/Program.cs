@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
 Console.WriteLine("welcome to the regular expression program");
-Console.WriteLine("1,checking userfirstname\n2.checking userLatname\n3.checking useremailId\n4.checking userPhoneNumber\n5.checking userPassword");
+Console.WriteLine("1,checking userfirstname\n2.checking userLatname\n3.checking useremailId\n4.checking userPhoneNumber\n5.checking userPassword\n6. checking user Password withAtleast one capital letter");
 Console.WriteLine("choose what program u want");
 int choose = Convert.ToInt32(Console.ReadLine());
 switch (choose)
@@ -103,4 +103,29 @@ switch (choose)
 
         }
         break;
+        case 6:
+        Console.WriteLine("");
+
+        string[] passWord = { "jayaprakash", "Jayaprakash", "jayp","Jaya","JAYAPRAk" };
+        //string passInput = "^([A-Z]{1,}.[a-z]{0,}).{8,]$";
+        string passInput = "^(?=.*[A-Z])([a-z]{0,}).{8,}$";
+
+        foreach (string input in passWord)
+        {
+            if (Regex.IsMatch(input, passInput))
+
+
+            {
+                Console.WriteLine("{0} is a valid  of user password", input);
+            }
+            else
+            {
+                Console.WriteLine("{0} invalid of user password", input);
+            }
+
+
+
+        }
+        break;
+
 }
