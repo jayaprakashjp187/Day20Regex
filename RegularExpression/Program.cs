@@ -129,7 +129,7 @@ switch (choose)
         break;
         case 7:
         Console.WriteLine("setting a password with atleast one number");
-        string a = "^(?=.*[A-Z])([a-z]{0,})(?=.*[0-9]).{8,}$";
+        string a = @"^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$";
         string[] passwordWithNum = { "Jaya1prakash", "jayaprakash", "Jayaprakash", "Jayaprakash1524" };
         foreach (string input in passwordWithNum)
         {
