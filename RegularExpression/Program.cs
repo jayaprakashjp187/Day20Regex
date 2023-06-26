@@ -108,7 +108,7 @@ switch (choose)
 
         string[] passWord = { "jayaprakash", "Jayaprakash", "jayp","Jaya","JAYAPRAk" };
         //string passInput = "^([A-Z]{1,}.[a-z]{0,}).{8,]$";
-        string passInput = "^(?=.*[A-Z])([a-z]{0,}).{8,}$";
+        string passInput = @"^(?=.*[A-Z])[A-Za-z]{8,}$";
 
         foreach (string input in passWord)
         {
